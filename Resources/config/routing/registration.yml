@@ -1,0 +1,5 @@
+tanna_user_registration_index:
+    path:     /register
+    defaults: { _controller: TannaUserBundle:Registration:index }
+    requirements:
+            _method:  GET

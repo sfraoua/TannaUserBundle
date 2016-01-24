@@ -1,0 +1,23 @@
+Tanna\UserBundle\Model\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: { fields: [email], groups: [registration, profile] }
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: { fields: [username], groups: [registration, profile] }
+    properties:
+        email:
+            - NotBlank: { groups: [registration, profile] }
+            - Email: { groups: [registration, profile] }
+        username:
+            - NotBlank: { groups: [registration, profile] }
+        givenName:
+            - NotBlank: { groups: [registration, profile] }
+        familyName:
+            - NotBlank: { groups: [registration, profile] }
+        gender:
+            - NotBlank: { groups: [registration, profile] }
+            - Choice:
+                choices: [m, f]
+                message:  error.form.user.gender
+                groups: [registration, profile]
+        plainPassword:
+            - NotBlank: { groups: [registration] }
+            - Length: { min: 6, groups: [registration], minMessage: error.form.user.password_length}

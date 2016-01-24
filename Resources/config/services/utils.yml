@@ -1,0 +1,3 @@
+services:
+    tanna_user.utils.canonicalizer:
+        class: Tanna\UserBundle\Util\Canonicalizer

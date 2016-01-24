@@ -1,0 +1,11 @@
+tanna_user_routing:
+    resource: "@TannaUserBundle/Resources/config/routing/user.yml"
+    prefix:   /
+
+tanna_registration_routing:
+    resource: "@TannaUserBundle/Resources/config/routing/registration.yml"
+    prefix:   /
+
+tanna_security_routing:
+    resource: "@TannaUserBundle/Resources/config/routing/security.yml"
+    prefix:   /

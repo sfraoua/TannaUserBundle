@@ -1,0 +1,27 @@
+services:
+    #Manager
+    tanna_user.user.manager:
+        class: Tanna\UserBundle\Manager\UserManager
+        arguments: ["@tanna_user.doctrine.om", "@security.encoder_factory", "@tanna_user.utils.canonicalizer", %tanna_user.user.class%]
+
+    # =========== Profile =============
+    tanna_user.user.form_factory.profile:
+        class: Tanna\UserBundle\Form\Factory\FormFactory
+        arguments: ["@form.factory", %tanna_user.user.profile.form.name%, %tanna_user.user.profile.form.type%, %tanna_user.user.profile.form.validation_groups%]
+
+    tanna_user.user.type.profile:
+        class: Tanna\UserBundle\Form\Type\ProfileFormType
+        arguments: [%tanna_user.user.profile.form.type%]
+        tags:
+            - { name: form.type, alias: tanna_user_profile_type }
+
+    # =========== Profile =============
+    tanna_user.user.form_factory.registration:
+        class: Tanna\UserBundle\Form\Factory\FormFactory
+        arguments: ["@form.factory", %tanna_user.user.registration.form.name%, %tanna_user.user.registration.form.type%, %tanna_user.user.registration.form.validation_groups%]
+
+    tanna_user.user.type.registration:
+        class: Tanna\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%tanna_user.user.class%, %tanna_user.user.registration.form.validation_groups%]
+        tags:
+            - { name: form.type, alias: tanna_user_profile_type }

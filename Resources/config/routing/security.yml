@@ -1,0 +1,8 @@
+tanna_user_login_index:
+    path:     /login
+    defaults: { _controller: TannaUserBundle:Security:login }
+    requirements:
+        _method:  GET
+
+tanna_user_login_check:
+    path:     /login_check

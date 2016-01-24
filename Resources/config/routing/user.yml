@@ -1,0 +1,5 @@
+tanna_user_show_all:
+    path:     /all
+    defaults: { _controller: TannaUserBundle:User:index }
+    requirements:
+            _method:  GET

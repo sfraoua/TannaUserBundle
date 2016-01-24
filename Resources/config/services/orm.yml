@@ -1,0 +1,2 @@
+services:
+    tanna_user.doctrine.om: '@doctrine.orm.entity_manager'

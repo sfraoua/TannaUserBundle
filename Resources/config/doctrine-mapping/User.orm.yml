@@ -1,0 +1,107 @@
+Tanna\UserBundle\Model\User:
+    type: mappedSuperclass
+    fields:
+        givenName:
+            type: string
+            length: 255
+            column: given_name
+
+        familyName:
+            type: string
+            length: 255
+            column: family_name
+
+        gender:
+            type: string
+            length: 1
+
+        address:
+            type: string
+            length: 255
+            nullable: true
+
+        birthday:
+            type: date
+            nullable: true
+
+        phone:
+            type: string
+            length: 30
+            nullable: true
+
+        username:
+            type: string
+            length: 255
+
+        usernameCanonical:
+            type: string
+            length: 255
+            unique: true
+            column: username_canonical
+
+        email:
+            type: string
+            length: 255
+
+        emailCanonical:
+            type: string
+            length: 255
+            unique: true
+            column: email_canonical
+
+        enabled:
+            type: boolean
+
+        locked:
+            type: boolean
+
+        expired:
+            type: boolean
+
+        expiresAt:
+            type: datetime
+            nullable: true
+            column: expires_at
+
+        salt:
+            type: string
+
+        password:
+            type: string
+
+        randomPassword:
+            type: boolean
+
+        facebookId:
+            type: string
+            nullable: true
+            column: facebook_id
+            unique: true
+
+        googleId:
+            type: string
+            nullable: true
+            column: google_id
+            unique: true
+
+        lastLogin:
+            type: datetime
+            nullable: true
+            column: last_login
+
+        creationDate:
+            type: datetime
+            column: creation_date
+
+        confirmationToken:
+            type: string
+            nullable: true
+            column: confirmation_canonical
+
+        passwordRequestedAt:
+            type: datetime
+            nullable: true
+            column: password_requested_at
+
+        roles:
+            type: array
