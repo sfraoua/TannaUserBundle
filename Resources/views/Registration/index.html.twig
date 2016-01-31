@@ -1,1 +1,5 @@
 {{ form(form) }}
+
+{% if facebookLoginUrl is not empty %}
+<a href="{{ facebookLoginUrl }}">Register with facebook</a>
+{% endif %}

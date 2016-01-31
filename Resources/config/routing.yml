@@ -9,3 +9,7 @@ tanna_registration_routing:
 tanna_security_routing:
     resource: "@TannaUserBundle/Resources/config/routing/security.yml"
     prefix:   /
+
+tanna_facebook_routing:
+    resource: "@TannaUserBundle/Resources/config/routing/facebook.yml"
+    prefix:   /

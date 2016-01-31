@@ -1,0 +1,5 @@
+tanna_user_facebook_fallback:
+    path:     /facebook-fallback
+    defaults: { _controller: TannaUserBundle:Facebook:fallback }
+    requirements:
+            _method:  GET

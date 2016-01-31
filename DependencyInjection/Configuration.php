@@ -31,6 +31,28 @@ class Configuration implements ConfigurationInterface
             ->thenInvalid('Invalid database driver "%s"')
             ->end()
             ->end();
+        //facebook
+        $rootNode
+            ->children()
+                ->arrayNode('facebook')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('app_id')->defaultValue('')->end()
+                        ->scalarNode('app_secret')->defaultValue('')->end()
+                    ->end()
+                ->end()
+            ->end();
+        //facebook
+        $rootNode
+            ->children()
+                ->arrayNode('facebook')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('app_id')->defaultValue('')->end()
+                        ->scalarNode('app_secret')->defaultValue('')->end()
+                    ->end()
+                ->end()
+            ->end();
         $rootNode
             ->children()
             ->arrayNode('user')
@@ -40,6 +62,10 @@ class Configuration implements ConfigurationInterface
                         #registration
                         ->arrayNode('registration')
                             ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('redirection')->isRequired()->cannotBeEmpty()->end()
+                            ->end()
+
                             ->children()
                                 ->arrayNode('form')
                                     ->addDefaultsIfNotSet()
@@ -95,23 +121,6 @@ class Configuration implements ConfigurationInterface
                 ->end()
             ->end();
 
-//        //Registration
-//        ->arrayNode('registration')
-//        ->addDefaultsIfNotSet()
-//        ->children()
-//        ->arrayNode('form')
-//        ->addDefaultsIfNotSet()
-//        ->children()
-//        ->scalarNode('type')->defaultValue('Tanna\UserBundle\Form\Type\RegistrationFormType')->end()
-//        ->scalarNode('name')->defaultValue('tanna_user_registration_form')->end()
-//        ->arrayNode('validation_groups')
-//        ->prototype('scalar')->end()
-//        ->defaultValue(array('Registration'))
-//        ->end()
-//        ->end()
-//        ->end()
-//        ->end()
-//        ->end()
 
         $rootNode
             ->children()

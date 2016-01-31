@@ -32,6 +32,8 @@ class TannaUserExtension extends Extension implements PrependExtensionInterface
         //declaring user classes as parameters
         $container->setParameter('tanna_user.user.class', $config['user']['class']);
 
+
+        $container->setParameter('tanna_user.user.registration.redirection', $config['user']['registration']['redirection']);
         $container->setParameter('tanna_user.user.registration.form.type', $config['user']['registration']['form']['type']);
         $container->setParameter('tanna_user.user.registration.form.name', $config['user']['registration']['form']['name']);
         $container->setParameter('tanna_user.user.registration.form.validation_groups', $config['user']['registration']['form']['validation_groups']);
@@ -47,6 +49,8 @@ class TannaUserExtension extends Extension implements PrependExtensionInterface
         //declaring group classes as parameters
         $container->setParameter('tanna_user.group.class', $config['group']['class']);;
         $container->setParameter('tanna_user.db_driver', $config['db_driver']);
+        $container->setParameter('tanna_user.facebook.app_id', $config['facebook']['app_id']);
+        $container->setParameter('tanna_user.facebook.app_secret', $config['facebook']['app_secret']);
 
         //load services
         $loader->load(sprintf('%s.yml', $config['db_driver']));
