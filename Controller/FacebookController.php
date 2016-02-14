@@ -126,9 +126,8 @@ class FacebookController extends Controller
         $user->setBirthday($facebookUser['birthday']);
         $user->setEmail($facebookUser['email']);
         $user->setUsername($facebookUser['email']);
-        $user->setPlainPassword(rand(1000000, 9999999));
+        $user->setPlainPassword(rand(10000, 99999));
         $user->setRandomPassword(true);
-        $user->setRandomPassword($facebookUser['id']);
 
         $validator = $this->get('validator');
         $errors = $validator->validate($user, null, array('registration'));
